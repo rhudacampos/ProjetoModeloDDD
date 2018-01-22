@@ -8,16 +8,13 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
         public ProdutoConfiguration()
         {
             HasKey(p => p.ProdutoId);
+
             Property(p => p.Nome)
                 .IsRequired()
                 .HasMaxLength(250);
 
             Property(p => p.Valor)
                 .IsRequired();
-
-            Property(p => p.Nome)
-                .IsRequired()
-                .HasMaxLength(250);
 
             HasRequired(p => p.Cliente)
                 .WithMany()
